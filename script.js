@@ -92,7 +92,7 @@ const data = [
 ];
 
 
-const container = document.querySelector(".container")
+
 
 function Card(props) {
     return React.createElement("div", { className: "person" }, [
