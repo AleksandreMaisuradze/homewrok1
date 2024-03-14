@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 14px;
+    color: brown;
+}
+
+.person {
+    width: 260px;
+    padding: 8px;
+    border: 2px solid rgb(54, 14, 14);
+    border-radius: 10px;
+}
