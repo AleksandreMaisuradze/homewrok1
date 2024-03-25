@@ -1,14 +1,11 @@
 import { users } from "../constants/constant";
-import "../reset.css"
 
-export function User({ setShowRest }) {
-    const firstFive = users.slice(0, 5);
-    function next() {
-        setShowRest(true)
-    }
+export function NextFive() {
+    const restFive = users.slice(5)
+ 
     return (
         <div className="userDiv">
-            {firstFive.map((user, index) => (
+            {restFive.map((user, index) => (
                 <div key={index} className="user">
                     <h1>Full name: {user.name.title} {user.name.first} {user.name.last}</h1>
                     <img src={user.picture.thumbnail} alt="thumbnail"></img>
@@ -19,8 +16,6 @@ export function User({ setShowRest }) {
                     <p>Phone: {user.phone}</p>
                 </div>
             ))}
-
-            <button className="next" onClick={next}>Next 5</button>
         </div>
     )
 

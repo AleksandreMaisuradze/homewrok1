@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 
-export function Form() {
+
+export function Form({setShowUser}) {
 
     const [user, setUser] = useState({
         email: "",
@@ -9,12 +10,11 @@ export function Form() {
 
     let isDisabled = user.email === "digitalAcademy@gmail.com" && user.password === "iLoveReact123" ? false : true
 
-
     function refresh(e) {
         e.preventDefault()
+        setShowUser(true)
     }
 
-    console.log(user);
     return (
         <form onSubmit={refresh}>
             <input type="email" placeholder="enter email" onChange={(e) => {

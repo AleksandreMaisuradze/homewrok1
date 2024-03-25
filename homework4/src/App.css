@@ -1,7 +1,9 @@
 #root {
     margin: 10px;
+}
+
+.userDiv {
     display: flex;
-    gap: 40px;
     flex-wrap: wrap;
 }
 
@@ -15,4 +17,9 @@
 img {
     width: 100px;
     height: 100px;
+}
+
+.next {
+    margin-top: 20px;
+    font-size: 18px;
 }
