@@ -1,7 +1,7 @@
 import { users } from "../constants/constant";
 import "../reset.css"
 
-export function User({ setShowRest }) {
+export default function User({ setShowRest }) {
     const firstFive = users.slice(0, 5);
     function next() {
         setShowRest(true)

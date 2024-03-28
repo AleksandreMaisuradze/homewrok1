@@ -1,8 +1,5 @@
-import React, { useState } from "react"
-
-
-export function Form({setShowUser}) {
-
+import React, { useState } from "react";
+export default function Form({ setShowUser }) {
     const [user, setUser] = useState({
         email: "",
         password: ""
@@ -12,8 +9,13 @@ export function Form({setShowUser}) {
 
     function refresh(e) {
         e.preventDefault()
+
+    }
+
+    function hideForm() {
         setShowUser(true)
     }
+
 
     return (
         <form onSubmit={refresh}>
@@ -23,7 +25,7 @@ export function Form({setShowUser}) {
             <input type="text" placeholder="enter password" onChange={(e) => {
                 setUser(prev => ({ ...prev, password: e.target.value }))
             }}></input>
-            <button type="submit" disabled={isDisabled}>Render Users</button>
+            <button type="submit" disabled={isDisabled} onClick={hideForm}>Render Users</button>
         </form >
     )
 }

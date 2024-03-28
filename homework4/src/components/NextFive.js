@@ -1,8 +1,8 @@
 import { users } from "../constants/constant";
 
-export function NextFive() {
+export default function NextFive() {
     const restFive = users.slice(5)
- 
+
     return (
         <div className="userDiv">
             {restFive.map((user, index) => (

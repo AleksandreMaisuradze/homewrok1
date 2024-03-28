@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import "./App.css";
-import "./reset.css"
-import { User } from "./components/User";
-import { Form } from "./components/Form";
-import { NextFive } from "./components/NextFive";
+import "./reset.css";
+import User from "./components/User";
+import Form from "./components/Form";
+import NextFive from "./components/NextFive";
 
 function App() {
-
-  const [showUser, setShowUser] = useState(false)
-  const [showRest, setShowRest] = useState(false)
+  const [showUser, setShowUser] = useState(false);
+  const [showRest, setShowRest] = useState(false);
 
   return (
     <>
-      <Form setShowUser={setShowUser} />
-      {showUser && <User setShowRest={setShowRest}/>}
+      {!showUser && <Form setShowUser={setShowUser} />}
+      {showUser && <User setShowRest={setShowRest} />}
       {showRest && <NextFive />}
     </>
   );
