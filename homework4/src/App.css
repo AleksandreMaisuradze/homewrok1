@@ -1,0 +1,25 @@
+#root {
+    margin: 10px;
+}
+
+.userDiv {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user {
+    width: 300px;
+    padding: 12px;
+    border: 2px solid rgb(191, 133, 133);
+    border-radius: 4px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.next {
+    margin-top: 20px;
+    font-size: 18px;
+}
