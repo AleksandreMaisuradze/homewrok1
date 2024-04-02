@@ -1,0 +1,23 @@
+.appDiv {
+  margin: 20px;
+}
+
+.usersAndOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.usersDiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.userDiv {
+  padding: 10px;
+  width: 250px;
+  height: 200px;
+  border: 1px solid saddlebrown;
+  border-radius: 5px;
+}
