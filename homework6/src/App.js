@@ -3,7 +3,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import routes from "./constants/route";
 import Home from "./pages/Home";
-import Universities from "./pages/Universities"
+import Universities from "./pages/Universities";
 function App() {
   return (
     <div className="App">
