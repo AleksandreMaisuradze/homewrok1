@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
+import UniversitiesByCountry from "../components/UniversitiesByCounty";
 
 function Universities() {
     const [universityData, setUniversityData] = useState([])
     const [error, setError] = useState("")
     const [isLoading, setIsLoading] = useState(true)
+    const { universities } = useParams();
+
     useEffect(() => {
-        fetch(`http://universities.hipolabs.com/search?country=Georgia`)
+        fetch(`http://universities.hipolabs.com/search?country=${universities}`)
             .then((res) => {
                 if (res.ok) {
                     return res.json()
@@ -18,7 +22,7 @@ function Universities() {
             }).finally(() => {
                 setIsLoading(false)
             })
-    }, [])
+    }, [universities])
 
     if (error) {
         return (
@@ -35,7 +39,7 @@ function Universities() {
     return (
         <div className="universities">
             {universityData.map((universities) =>
-                <div key={universities.name} data={universities}>{universities.name}</div>
+                <UniversitiesByCountry key={universities.name} data={universities} />
             )}
         </div>
     )
