@@ -15,17 +15,7 @@ function AppContextProvider({ children }) {
 
     const [state, dispatch] = useReducer(appReducer, initialState);
 
-    useEffect(() => {
-        let productSkip = (skip - 1) * constants.productLimit
-        fetchProducts(constants.productLimit, productSkip)
-            .then((data) => {
-                dispatch(saveProductData(data))
-            }).catch((err) => {
-                dispatch(ProductDataFetchingError(err.message))
-            }).finally(() => {
-                dispatch(toggleProductLoading(false))
-            })
-    }, [skip])
+
 
     useEffect(() => {
         fetchProducts(constants.productLimit, 0)
@@ -40,8 +30,20 @@ function AppContextProvider({ children }) {
             })
     }, [])
 
+    useEffect(() => {
+        let productSkip = (skip - 1) * constants.productLimit
+        fetchProducts(constants.productLimit, productSkip)
+            .then((data) => {
+                dispatch(saveProductData(data))
+            }).catch((err) => {
+                dispatch(ProductDataFetchingError(err.message))
+            }).finally(() => {
+                dispatch(toggleProductLoading(false))
+            })
+    }, [skip])
+
     return (
-        <context.Provider value={{ state, dispatch, skip, setSkip, buttonCount, setButtonCount}}>
+        <context.Provider value={{ state, dispatch, skip, setSkip, buttonCount, setButtonCount }}>
             {children}
         </context.Provider>
     )
