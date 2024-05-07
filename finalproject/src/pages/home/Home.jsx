@@ -14,7 +14,7 @@ function Home() {
     return (
         <>
             <HomeCarousel />
-            <Button variant="primary" className="homeButton" onClick={clickHandler} >Registration</Button>
+            <Button variant="primary" className="homeButton" onClick={clickHandler} >Register Now</Button>
         </>
     )
 }

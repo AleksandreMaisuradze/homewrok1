@@ -14,3 +14,9 @@
 .nav_li:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 500px) {
+    .nav_li{
+        font-size: 14px;
+    }
+}
