@@ -27,3 +27,11 @@ export async function login(user) {
     }
     throw new Error(data.msg);
 };
+
+export async function fetchData(url, options) {
+    const resp = await fetch(url, options);
+    if (resp.ok) {
+        return resp.json();
+    }
+    throw new Error(`fetch ${url} error`)
+}
