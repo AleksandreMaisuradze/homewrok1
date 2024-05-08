@@ -3,6 +3,7 @@ import Home from "../pages/home/Home";
 import Movies from "../pages/movies/Movies";
 import Registration from "../pages/registration/Registration";
 import LogIn from "../pages/login/LogIn";
+import AuthGuards from "../Guards/AuthGuards";
 
 const routes = [
     {
@@ -12,6 +13,7 @@ const routes = [
     {
         path: appRoutes.Movies,
         Component: Movies,
+        Guard: AuthGuards,
     },
     {
         path: appRoutes.Registration,
