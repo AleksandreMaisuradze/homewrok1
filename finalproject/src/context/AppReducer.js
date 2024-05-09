@@ -1,7 +1,10 @@
+import { parseToken, toogleStorage } from "../utils/utils";
 import actions from "./AppActions";
 
 export const initialState = {
     isUserLoggedIn: false,
+    user: null,
+    token: ""
 }
 
 export const appReducer = (state, action) => {
@@ -9,7 +12,14 @@ export const appReducer = (state, action) => {
 
     switch (type) {
         case actions.userSignIn: {
-            return { ...state, isUserLoggedIn: true }
+            const user = parseToken(payload)
+            toogleStorage(payload)
+            return { ...state, isUserLoggedIn: true, token: payload, user }
+        }
+
+        case actions.userSignOut: {
+            toogleStorage()
+            return { ...state, isUserLoggedIn: false, token: "", user: null }
         }
 
         default:

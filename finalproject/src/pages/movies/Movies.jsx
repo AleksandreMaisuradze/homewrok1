@@ -2,10 +2,11 @@ import React from "react";
 import useFetch from "../../hooks/useFetch";
 import MovieCard from "../../components/moviecard/MovieCard";
 import "./movies.css"
+import { useAppContext } from "../../context/AppContextProvider";
 
 
 function Movies() {
-    
+
     const url = 'https://imdb-top-100-movies.p.rapidapi.com/';
     const options = {
         method: 'GET',
@@ -15,6 +16,9 @@ function Movies() {
         }
     };
     const [movies, moviesFetchError, isMoviesDataLoading] = useFetch(url, options)
+
+    const { state } = useAppContext()
+    console.log(state);
 
     if (moviesFetchError) {
         return (
@@ -29,11 +33,11 @@ function Movies() {
             </div>)
     }
 
-        return (
-            <div className="movieCardWrapper" >
-                {movies.map(movie => <MovieCard key={movie.rank} data={movie} />)}
-            </div>
-        )
+    return (
+        <div className="movieCardWrapper" >
+            {movies.map(movie => <MovieCard key={movie.rank} data={movie} />)}
+        </div>
+    )
 }
 
 export default Movies;

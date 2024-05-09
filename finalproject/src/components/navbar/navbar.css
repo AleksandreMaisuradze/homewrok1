@@ -11,12 +11,24 @@
     font-size: 18px;
     color: rgb(60, 42, 42);
 }
+
 .nav_li:hover {
     text-decoration: underline;
 }
 
+.navButton {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(60, 42, 42);
+    border: none;
+    background-color: inherit;
+}
+
 @media (max-width: 500px) {
-    .nav_li{
+
+    .nav_li,
+    .navButton {
         font-size: 14px;
     }
 }

@@ -1,11 +1,20 @@
-import React, { createContext, useContext, useReducer } from "react"
+import React, { createContext, useContext, useEffect, useReducer } from "react"
 import { appReducer, initialState } from "./AppReducer"
+import { userSignin } from "./AppActionsCreator";
+import { validation } from "../utils/utils";
 
 const appContext = createContext()
 
 const AppContextProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(appReducer, initialState);
+
+    useEffect(() => {
+        const token = localStorage.getItem("accesToken")
+        if (token && validation(token)) {
+            dispatch(userSignin(token))
+        }
+    }, [])
 
     return (
         <appContext.Provider value={{ state, dispatch }}>

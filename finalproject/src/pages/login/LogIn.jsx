@@ -25,8 +25,7 @@ function LogIn() {
     const submitHandler = (e) => {
         e.preventDefault();
         login(user).then((data) => {
-            console.log(data);
-            dispatch(userSignin())
+            dispatch(userSignin(data.token))
             navigate(appRoutes.Movies)
         }).catch((err) => {
             setError(err.message)
