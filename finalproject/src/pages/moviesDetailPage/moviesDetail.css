@@ -1,0 +1,45 @@
+.detailsWrapper {
+    margin: 24px;
+    display: flex;
+    flex-direction: column;
+    column-gap: 24px;
+}
+
+.detailsCard {
+    margin-bottom: 24px;
+    display: flex;
+    gap: 24px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+span {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+@media (max-width:680px) {
+    img {
+        width: 200px;
+    }
+
+    span {
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    p {
+        font-size: 11px;
+    }
+
+    a {
+        font-size: 11px;
+    }
+
+    .detailsWrapper {
+        margin: 12px;
+    }
+}

@@ -9,7 +9,6 @@ function Navbar() {
     const navigate = useNavigate()
     const navRoutes = Object.entries(appRoutes)
     const { state, dispatch } = useAppContext()
-    console.log(navRoutes);
     if (state.isUserLoggedIn) {
         navRoutes.pop()
     }

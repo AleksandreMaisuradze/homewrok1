@@ -2,7 +2,6 @@ import React from "react";
 import useFetch from "../../hooks/useFetch";
 import MovieCard from "../../components/moviecard/MovieCard";
 import "./movies.css"
-import { useAppContext } from "../../context/AppContextProvider";
 
 
 function Movies() {
@@ -16,9 +15,6 @@ function Movies() {
         }
     };
     const [movies, moviesFetchError, isMoviesDataLoading] = useFetch(url, options)
-
-    const { state } = useAppContext()
-    console.log(state);
 
     if (moviesFetchError) {
         return (

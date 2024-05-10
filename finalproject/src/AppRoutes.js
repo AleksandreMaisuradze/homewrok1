@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import routes from "./config/routes";
+import { Movies_PDP } from "./constants/appRoutes";
+import MoviesDetail from "./pages/moviesDetailPage/MoviesDetail";
 
 function AppRoutes() {
     return (
@@ -28,7 +30,8 @@ function AppRoutes() {
                 )
             }
             )}
-        </Routes>
+            <Route path={Movies_PDP} element={<MoviesDetail />} />
+        </Routes >
     )
 }
 
