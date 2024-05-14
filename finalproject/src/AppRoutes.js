@@ -20,6 +20,18 @@ function AppRoutes() {
                         </Route>
                     )
                 }
+                if(route.show){
+                    return (
+                        <Route key={route.path}
+                            path={route.path}
+                            element={
+                                <route.show>
+                                    <route.Component />
+                                </route.show>
+                            } >
+                        </Route>
+                    )
+                }
                 return (
                     <Route key={route.path}
                         path={route.path}

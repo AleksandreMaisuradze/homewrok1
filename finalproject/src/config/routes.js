@@ -4,6 +4,7 @@ import Movies from "../pages/movies/Movies";
 import Registration from "../pages/registration/Registration";
 import LogIn from "../pages/login/LogIn";
 import AuthGuards from "../Guards/AuthGuards";
+import DontShow from "../Guards/DontShow";
 
 const routes = [
     {
@@ -18,10 +19,12 @@ const routes = [
     {
         path: appRoutes.Registration,
         Component: Registration,
+        show: DontShow,
     },
     {
         path: appRoutes.LogIn,
         Component: LogIn,
+        show: DontShow,
     },
 ]
 
