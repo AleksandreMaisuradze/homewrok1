@@ -1,6 +1,7 @@
 .movieCardWrapper{
     width: inherit;
-    margin: 20px;
+    padding-inline: 18px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
