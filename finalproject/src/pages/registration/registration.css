@@ -1,0 +1,30 @@
+.formWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registrationForm {
+    margin: 40px 0;
+    padding: 100px 80px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background-color: rgb(187, 205, 205);
+}
+
+.registrationButton {
+    padding: 8px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(122, 166, 170);
+    margin: 0 auto;
+}
+
+@media (max-width:500px){
+    .registrationForm {
+        padding: 50px 12px;
+    }
+}

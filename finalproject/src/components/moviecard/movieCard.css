@@ -1,0 +1,16 @@
+.movieCard {
+    width: 320px;
+    height: 350px;
+    text-wrap: wrap;
+}
+
+.movieCardTitle {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.movieCardImage {
+    width: 320px;
+    height: 300px;
+    cursor: pointer;
+}
